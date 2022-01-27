@@ -1,4 +1,5 @@
 package Person;
+
 import Enum.MoodEnum;
 import Interface.LocationInterface;
 import core.PersonAbstract;
@@ -19,10 +20,10 @@ public class LittleHuman extends PersonAbstract implements LocationInterface {
 
     @Override
     public void setMood(MoodEnum mood) {
-        if (super.mood != mood){
-            try{
+        if (super.mood != mood) {
+            try {
                 throw new MoodException("Этому персонажу нельзя менять настроение");
-            }catch (MoodException e){
+            } catch (MoodException e) {
                 e.printStackTrace();
             }
         }
@@ -31,12 +32,12 @@ public class LittleHuman extends PersonAbstract implements LocationInterface {
 
 
     @Override
-    public void getHouse() {
-
+    public String getHouse() {
+        return house;
     }
 
     @Override
-    public void getStreet() {
-
+    public String getStreet() {
+        return street;
     }
 }
