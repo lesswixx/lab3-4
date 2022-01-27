@@ -1,38 +1,42 @@
 package Person;
 
-import Interface.DrillInterface;
+import Interface.SwitchAble;
 
 import java.util.Objects;
 
 
-public class Drill implements DrillInterface {
+public class Drill implements SwitchAble {
     private final String name;
     private boolean type;
 
-    public Drill(String name,boolean type){
+    public Drill(String name, boolean type) {
         this.type = type;
         this.name = name;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
-    public boolean getType(){
+    public boolean isBroken() {
         return type;
     }
-    public void setType(){
-        if (getType() == true) {
+
+    public void setType() {
+        if (isBroken()) {
             System.out.println("Дрель включена");
-        }else{
+        } else {
             System.out.println("Дрель выключена");
         }
 
     }
+
     @Override
     public void on() {
         this.type = true;
         System.out.println(name + " включена");
+
     }
 
     @Override
