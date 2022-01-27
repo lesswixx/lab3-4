@@ -13,9 +13,8 @@ public abstract class ConditionalAbstract extends PersonAbstract {
     public boolean getConditional(){
         return conditional;
     }
-    public void conditional() {
-
-    }
+    
+    public abstract void conditional();
 
     @Override
     public boolean equals(Object o) {
