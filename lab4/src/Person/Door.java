@@ -1,31 +1,31 @@
 package Person;
 
-import Interface.DoorInterface;
-import Interface.DrillInterface;
+import Interface.BreakAble;
+import Interface.SwitchAble;
 
 import java.util.Objects;
 
 
-public class Door implements DoorInterface {
+public class Door implements BreakAble {
     private boolean broken;
     private final String name;
 
     public Door(String name, boolean broken) {
-        this.broken=broken;
+        this.broken = broken;
         this.name = name;
     }
+
     @Override
     public void setBroken(boolean broken) {
         this.broken = broken;
     }
 
     @Override
-    public void broken(DrillInterface drillInterface){
-
-        if (drillInterface.getType()){
+    public void broken(SwitchAble switchAble) {
+        if (switchAble.isBroken()) {
             this.setBroken(true);
             System.out.println("Дверь сломана");
-        }else {
+        } else {
             System.out.println("Дверь цела и невредима");
         }
 
