@@ -24,13 +24,13 @@ public class BigHuman extends PersonAbstract {
     }
 
     @Override
-    public void getHouse() {
-
+    public String getHouse() {
+        return house;
     }
 
     @Override
-    public void getStreet() {
-
+    public String getStreet() {
+        return street;
     }
 
 }
