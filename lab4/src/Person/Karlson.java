@@ -29,7 +29,7 @@ public class Karlson extends ConditionalAbstract implements PropellerInterface {
         }
         public void chekCharge(int percent) throws BatteryException {
 
-            if(!(charge(percent) <= 100)) {
+            if(charge(percent) > 100) {
                 throw new BatteryException("Батарея не может иметь заряд больше 100%");
             }
         }
@@ -58,9 +58,11 @@ public class Karlson extends ConditionalAbstract implements PropellerInterface {
     }
 
     @Override
-    public void getHouse() {
+    public String getHouse() {
+        return house;
     }
     @Override
     public void getStreet() {
+        return street;
     }
 }
