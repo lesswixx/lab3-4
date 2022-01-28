@@ -7,25 +7,30 @@ import core.PersonAbstract;
 
 
 public class BigHuman extends PersonAbstract {
-    private static int point = 100;
-    public BigHuman(String name, int age, MoodEnum mood, String street, String house, int point) {
+    public static int point = 100;
+    public BigHuman(String name, int age, MoodEnum mood, String street, String house) {
         super(name, age, mood, street, house);
-        this.point = point;
-
-
     }
-    public static class Reputation{
-        public int points(){
+
+    public static class Reputation {
+        public static void checkReputation() {
+            if (point < 100) {
+                System.out.println("У взрослых плохая репутация");
+            } else {
+                System.out.println("У взрослых хорошая репутация");
+            }
+
+        }
+        public static int lowPoints(){
+            point = point - 20;
             return point;
         }
-        public int lowPoints(){
-            return point - 20;
-        }
-        public int hightPoints(){
-            return point + 20;
-
+        public static int hightPoints(){
+            point = point + 20;
+            return point;
         }
     }
+
 
     @Override
     public void walk() {
